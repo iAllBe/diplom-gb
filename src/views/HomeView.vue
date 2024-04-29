@@ -7,17 +7,17 @@
             <a href="/" class="logo__link">
               <img
                 :src="logoMobileImage"
-                alt=""
+                alt="logo-image"
                 class="logo__image logo__image_mobile"
               />
               <img
                 :src="logoMobileImage"
-                alt=""
+                alt="logo-image"
                 class="logo__image logo__image_tablet"
               />
               <img
                 :src="logoDesktopImage"
-                alt=""
+                alt="logo-image"
                 class="logo__image logo__image_desktop"
               />
             </a>
@@ -247,6 +247,7 @@
           <div class="who-we">
             <div class="who-we__image-wrapper">
               <div class="who-we__image"></div>
+              <img :src="whoWeMobile" alt="who-we-image" />
               <div class="who-we__mount"></div>
             </div>
             <div class="who-we__description">
@@ -437,6 +438,10 @@ export default {
       oilItemImage2: require("@/assets/img/oils-item-2.png"),
       oilItemImage3: require("@/assets/img/oils-item-3.png"),
       oilItemImage4: require("@/assets/img/oils-item-4.png"),
+      whoWeMobile: require("@/assets/img/who-we_mobile.png"),
+      whoWeTabletDesctop: require("@/assets/img/who-we_tablet-desktop.png"),
+      whatDoMobile: require("@/assets/img/what-do_mobile.png"),
+      whatDoTabletDesctop: require("@/assets/img/what-do_tablet-desktop.png"),
     };
   },
   created() {},
