@@ -246,8 +246,18 @@
           <h2 class="about__title">О нас</h2>
           <div class="who-we">
             <div class="who-we__image-wrapper">
-              <div class="who-we__image"></div>
-              <img :src="whoWeMobile" alt="who-we-image" />
+              <img
+                v-show="width <= 768"
+                :src="whoWeMobile"
+                class="who-we__image"
+                alt="who-we-image"
+              />
+              <img
+                v-show="width > 768"
+                :src="whoWeTabletDesctop"
+                class="who-we__image"
+                alt="who-we-image"
+              />
               <div class="who-we__mount"></div>
             </div>
             <div class="who-we__description">
@@ -267,7 +277,18 @@
           </div>
           <div class="who-do">
             <div class="who-do__image-wrapper">
-              <div class="who-do__image"></div>
+              <img
+                v-show="width <= 768"
+                :src="whatDoMobile"
+                class="who-do__image"
+                alt="who-do-image"
+              />
+              <img
+                v-show="width > 768"
+                :src="whatDoTabletDesctop"
+                class="who-do__image"
+                alt="who-do-image"
+              />
               <div class="who-do__mount"></div>
             </div>
             <div class="who-do__description">
@@ -287,37 +308,58 @@
         </div>
       </div>
     </section>
-    <section class="recall">
+    <section class="reviews">
       <div class="container">
-        <div class="recall__inner">
-          <h2 class="recall__title">Отзывы</h2>
-          <div class="recall-slider">
-            <div class="recall-slider__item">
-              <div class="recall-slider__image recall-slider__image-1"></div>
+        <div class="reviews__inner">
+          <h2 class="reviews__title">Отзывы</h2>
+          <div class="reviews-slider">
+            <div class="reviews-slider__item">
+              <img
+                :src="reviwesSliderItem1"
+                class="reviews-slider__image reviews-slider__image-1"
+              />
             </div>
-            <div class="recall-slider__item">
-              <div class="recall-slider__image recall-slider__image-2"></div>
+            <div class="reviews-slider__item">
+              <img
+                :src="reviwesSliderItem2"
+                class="reviews-slider__image reviews-slider__image-2"
+              />
+            </div>
+            <div class="reviews-slider__item">
+              <img
+                :src="reviwesSliderItem3"
+                class="reviews-slider__image reviews-slider__image-3"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
     <section class="delivery">
-      <div class="delivery__mount"></div>
-      <h2 class="delivery__title">Доставка</h2>
+      <img :src="deliveryMount" class="delivery__mount" />
+      <h2 class="delivery__title">- Доставка</h2>
       <div class="delivery__inner">
         <div class="container">
           <div class="causes">
             <div class="causes__item">
-              <div class="causes__images causes__images-1"></div>
+              <img
+                :src="deliveryItem1"
+                class="causes__images causes__images-1"
+              />
               <div class="causes__text">Новая почта</div>
             </div>
             <div class="causes__item">
-              <div class="causes__images causes__images-2"></div>
+              <img
+                :src="deliveryItem2"
+                class="causes__images causes__images-2"
+              />
               <div class="causes__text">Почта</div>
             </div>
             <div class="causes__item">
-              <div class="causes__images causes__images-3"></div>
+              <img
+                :src="deliveryItem3"
+                class="causes__images causes__images-3"
+              />
               <div class="causes__text">Самовывоз</div>
             </div>
           </div>
@@ -325,20 +367,30 @@
       </div>
     </section>
     <section class="payment">
-      <h2 class="payment__title">Оплата</h2>
+      <img :src="paymentMount" class="payment__mount" />
+      <h2 class="payment__title">Оплата -</h2>
       <div class="payment__inner">
         <div class="container">
-          <div class="causes">
+          <div class="causes causes_payment">
             <div class="causes__item">
-              <div class="causes__images causes__images-1"></div>
+              <img
+                :src="paymentItem1"
+                class="causes__images causes__images-1"
+              />
               <div class="causes__text">Наложенный платёж</div>
             </div>
             <div class="causes__item">
-              <div class="causes__images causes__images-1"></div>
+              <img
+                :src="paymentItem2"
+                class="causes__images causes__images-1"
+              />
               <div class="causes__text">Приват24</div>
             </div>
             <div class="causes__item">
-              <div class="causes__images causes__images-1"></div>
+              <img
+                :src="paymentItem3"
+                class="causes__images causes__images-1"
+              />
               <div class="causes__text">Наличными при самовывозе</div>
             </div>
           </div>
@@ -346,10 +398,11 @@
       </div>
     </section>
     <section class="contacts">
-      <div class="contacts__inner">
-        <div class="container">
-          <h2 class="contacts__title">Контакты</h2>
-          <div class="contacts__image"></div>
+      <div class="container">
+        <h2 class="contacts__title">Контакты</h2>
+        <div class="contacts__inner">
+          <img :src="contactsImage" class="contacts__image" />
+          <div class="contacts__mount"></div>
           <div class="contacts-list">
             <div class="contacts-list__item">
               <div class="contacts-list__image contacts-list__image-1"></div>
@@ -430,6 +483,8 @@ export default {
   components: {},
   data() {
     return {
+      width: 0,
+
       logoMobileImage: require("@/assets/img/logo-mobile.png"),
       logoTabletImage: require("@/assets/img/logo-tablet.png"),
       logoDesktopImage: require("@/assets/img/logo-desktop.png"),
@@ -442,9 +497,28 @@ export default {
       whoWeTabletDesctop: require("@/assets/img/who-we_tablet-desktop.png"),
       whatDoMobile: require("@/assets/img/what-do_mobile.png"),
       whatDoTabletDesctop: require("@/assets/img/what-do_tablet-desktop.png"),
+      reviwesSliderItem1: require("@/assets/img/reviews-slider-item-1.png"),
+      reviwesSliderItem2: require("@/assets/img/reviews-slider-item-2.png"),
+      reviwesSliderItem3: require("@/assets/img/reviews-slider-item-3.png"),
+      deliveryItem1: require("@/assets/img/delivery-item-1.svg"),
+      deliveryItem2: require("@/assets/img/delivery-item-2.svg"),
+      deliveryItem3: require("@/assets/img/delivery-item-3.svg"),
+      deliveryMount: require("@/assets/img/delivery-bg.png"),
+      paymentItem1: require("@/assets/img/payment-item-1.svg"),
+      paymentItem2: require("@/assets/img/payment-item-2.svg"),
+      paymentItem3: require("@/assets/img/payment-item-3.svg"),
+      paymentMount: require("@/assets/img/payment-bg.png"),
+      contactsImage: require("@/assets/img/contacts-image.png"),
     };
   },
-  created() {},
+  created() {
+    const onResize = () => (this.width = window.innerWidth);
+    onResize();
+    window.addEventListener("resize", onResize);
+    this.$on("hook:beforeDestroy", () =>
+      window.removeEventListener("resize", onResize)
+    );
+  },
 };
 </script>
 
