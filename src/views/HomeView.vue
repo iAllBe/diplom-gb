@@ -247,13 +247,13 @@
           <div class="who-we">
             <div class="who-we__image-wrapper">
               <img
-                v-show="width <= 768"
+                v-show="width < 768"
                 :src="whoWeMobile"
                 class="who-we__image"
                 alt="who-we-image"
               />
               <img
-                v-show="width > 768"
+                v-show="width >= 768"
                 :src="whoWeTabletDesctop"
                 class="who-we__image"
                 alt="who-we-image"
@@ -401,7 +401,17 @@
       <div class="container">
         <h2 class="contacts__title">Контакты</h2>
         <div class="contacts__inner">
-          <img :src="contactsImage" class="contacts__image" />
+          <img
+            v-if="width < 768"
+            :src="contactsImage"
+            class="contacts__image"
+          />
+          <img
+            v-else-if="width < 1366"
+            :src="contactsImageTablet"
+            class="contacts__image"
+          />
+          <img v-else :src="contactsImageDesctop" class="contacts__image" />
           <div class="contacts__mount"></div>
           <div class="contacts-list">
             <div class="contacts-list__item">
@@ -509,6 +519,8 @@ export default {
       paymentItem3: require("@/assets/img/payment-item-3.svg"),
       paymentMount: require("@/assets/img/payment-bg.png"),
       contactsImage: require("@/assets/img/contacts-image.png"),
+      contactsImageTablet: require("@/assets/img/contacts-image_tablet.png"),
+      contactsImageDesctop: require("@/assets/img/contacts-image_desktop.png"),
     };
   },
   created() {
