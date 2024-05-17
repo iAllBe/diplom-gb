@@ -448,37 +448,39 @@
       </div>
     </section>
     <footer class="footer">
-      <div class="footer__inner">
+      <div class="footer__wrapper">
         <div class="container">
-          <a href="/" class="footer__logo-link"> </a>
-          <nav class="menu-footer">
-            <ul class="menu-footer__list">
-              <li class="menu-footer__item">
-                <a href="/" class="menu-footer__link">Масло</a>
-              </li>
-              <li class="menu-footer__item">
-                <a href="/" class="menu-footer__link">О нас</a>
-              </li>
-              <li class="menu-footer__item">
-                <a href="/" class="menu-footer__link">Отзывы</a>
-              </li>
-              <li class="menu-footer__item">
-                <a href="/" class="menu-footer__link">Оплата и доставка</a>
-              </li>
-              <li class="menu-footer__item">
-                <a href="/" class="menu-footer__link">Контакты</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="footer__links">
-            <a href="/" class="footer__links-item footer__links-item-1"> </a>
-            <a href="/" class="footer__links-item footer__links-item-2"> </a>
-            <a href="/" class="footer__links-item footer__links-item-3"> </a>
-            <a
-              href="tel:+380661143558"
-              class="footer__links-item footer__links-item-4"
-            >
-            </a>
+          <div class="footer__inner">
+            <a href="/" class="footer__logo-link"> </a>
+            <nav class="menu-footer">
+              <ul class="menu-footer__list">
+                <li class="menu-footer__item">
+                  <a href="/" class="menu-footer__link">Масло</a>
+                </li>
+                <li class="menu-footer__item">
+                  <a href="/" class="menu-footer__link">О нас</a>
+                </li>
+                <li class="menu-footer__item">
+                  <a href="/" class="menu-footer__link">Отзывы</a>
+                </li>
+                <li class="menu-footer__item">
+                  <a href="/" class="menu-footer__link">Оплата и доставка</a>
+                </li>
+                <li class="menu-footer__item">
+                  <a href="/" class="menu-footer__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer__links">
+              <a href="/" class="footer__links-item footer__links-item-1"> </a>
+              <a href="/" class="footer__links-item footer__links-item-2"> </a>
+              <a href="/" class="footer__links-item footer__links-item-3"> </a>
+              <a
+                href="tel:+380661143558"
+                class="footer__links-item footer__links-item-4"
+              >
+              </a>
+            </div>
           </div>
         </div>
       </div>
